@@ -45,7 +45,7 @@ public class windowSoftManager extends CordovaPlugin {
           cordova.getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_UNCHANGED | WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
         else if(action.equals("adjustNothing"))
           cordova.getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_NOTHING);
-        elseif(action.equals("disable"))
+        else if(action.equals("disable"))
           cordova.getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
       }
     });
