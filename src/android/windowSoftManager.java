@@ -12,42 +12,44 @@ import org.json.JSONObject;
 
 public class windowSoftManager extends CordovaPlugin {
 
-public static final String TAG = "Window Soft Manager";
+  public static final String TAG = "Window Soft Manager";
 
-/**
-* Constructor.
-*/
-public windowSoftManager() {}
+  /**
+  * Constructor.
+  */
+  public windowSoftManager() {}
 
-/**
-* Sets the context of the Command. This can then be used to do things like
-* get file paths associated with the Activity.
-*
-* @param cordova The context of the main Activity.
-* @param webView The CordovaWebView Cordova is running in.
-*/
+  /**
+  * Sets the context of the Command. This can then be used to do things like
+  * get file paths associated with the Activity.
+  *
+  * @param cordova The context of the main Activity.
+  * @param webView The CordovaWebView Cordova is running in.
+  */
 
   public void initialize(CordovaInterface cordova, CordovaWebView webView) {
-  super.initialize(cordova, webView);
+    super.initialize(cordova, webView);
   }
 
   public boolean execute(final String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-  final int duration = Toast.LENGTH_SHORT;
-  cordova.getActivity().runOnUiThread(new Runnable() {
-    public void run() {
-      if(action.equals("adjustPan"))
-        cordova.getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
-      else if(action.equals("adjustResize"))
-        cordova.getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
-	  else if(action.equals("stateVisible|adjustPan"))
-		cordova.getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE | WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
-	  else if(action.equals("stateUnchanged|adjustResize"))
-	    cordova.getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_UNCHANGED | WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
-	  else if(action.equals("adjustNothing"))
-	    cordova.getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_NOTHING);
-    }
-  });
+    final int duration = Toast.LENGTH_SHORT;
+    cordova.getActivity().runOnUiThread(new Runnable() {
+      public void run() {
+        if(action.equals("adjustPan"))
+          cordova.getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
+        else if(action.equals("adjustResize"))
+          cordova.getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
+        else if(action.equals("stateVisible|adjustPan"))
+          cordova.getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE | WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
+        else if(action.equals("stateUnchanged|adjustResize"))
+          cordova.getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_UNCHANGED | WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
+        else if(action.equals("adjustNothing"))
+          cordova.getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_NOTHING);
+        elseif(action.equals("disable"))
+          cordova.getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
+      }
+    });
 
-  return true;
+    return true;
   }
 }
