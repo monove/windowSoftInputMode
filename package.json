@@ -1,19 +1,29 @@
 {
-  "name": "windowsoftinputmode",
-  "version": "1.0.0",
-  "description": "Cordova plugin to dynamically change soft input mode on android devices Currently the plugin supports setting the soft input to adjustPan (SOFT_INPUT_ADJUST_PAN) or adjustResize(SOFT_INPUT_ADJUST_RESIZE). Feel free to extend it and make a pull request",
-  "main": "window/windowSoftManager.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/monove/windowSoftInputMode.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/monove/windowSoftInputMode/issues"
-  },
-  "homepage": "https://github.com/monove/windowSoftInputMode#readme"
+    "name": "cordova-plugin-windowsoftinputmode",
+    "version": "0.0.1",
+    "description": "Cordova plugin to dynamically change soft input mode on android devices",
+    "cordova": {
+        "id": "cordova-plugin-windowsoftinputmode",
+        "platforms": [
+            "android"
+        ]
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/monove/windowSoftInputMode.git"
+    },
+    "keywords": [
+        "windowSoftInputMode",
+        "ecosystem:cordova",
+        "cordova-android"
+    ],
+    "engines": [
+        {
+            "name": "cordova",
+            "version": ">=3.0.0"
+        }
+    ],
+    "author": "",
+    "license": "MIT",
+    "homepage": "https://github.com/monove/windowSoftInputMode/"
 }
